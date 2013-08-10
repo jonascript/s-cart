@@ -2,19 +2,91 @@
 <html lang="en" ng-app="myApp">
 <head>
   <meta charset="utf-8">
-  <title>My AngularJS App</title>
-  <link rel="stylesheet" href="css/app.css"/>
+  <title>S-Mart</title>
+  <link rel="stylesheet" href="css/stylesheets/screen.css"/>
+  <link rel="stylesheet" href="css/stylesheets/app.css"/>
+
 </head>
 <body>
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
-  </ul>
 
-  <div ng-view></div>
+  <div class="container">
 
-  <div>Angular seed app: v<span app-version></span></div>
+    <div class="row">
+        <div class="span6">
+          <h1>S-Mart</h1>
+          <p>Shop smart. Shop S-Mart.</p>
+        </div>
+        <div class="span6">
+          <h2>Cart</h2>
+          <table class="table">
+        <thead>
+          <tr>
+            <th>
+              <h3>Group 1</h3>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Product 1</td>
+            <td>Qty</td>
+            <td>
+              <input type="number" style="width: 45px; padding: 1px" min="0" max="10" value="0"> <i class="icon-trash"></i>
+            </td>
+          </tr>
+          <tr>
+            <td>Product 2</td>
+            <td>Qty</td>
+            <td>
+              <input type="number" style="width: 45px; padding: 1px" value="0">  <i class="icon-trash"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+          <p><a class="btn" href="#">Checkout »</a></p>
+        </div>
+        
+      </div>
+    <ul class="menu">
+      <li><a href="#/view1">view1</a></li>
+      <li><a href="#/view2">view2</a></li>
+    </ul>
 
+    <div ng-view></div>
+  </div>
+  <div class="container products" data-ng-controller="ProductsCtrl">
+    <div class="row">
+      <form id="custom-search-form" class="form-search form-horizontal pull-left">
+        <div class="input-append span12">
+            <input type="text" class="search-query" placeholder="Search">
+            <button type="submit" class="btn">Search</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="row">
+        <div data-ng-repeat="(key, product) in products" class="product">
+          <div class="thumbnail">
+            <img data-ng-src="{{product.img}}" alt="">
+            <img class="editor-icon" data-ng-show="product.editorsPick" src="/img/icon_editor.png" width="14" height="14" alt=""/>
+            <img class="sale-icon" data-ng-show="product.sale" src="/img/icon_sale.png" width="58" height="58" alt=""/>
+          </div>
+          <h3 class="name">{{product.name}}</h3>
+          <p class="brand">{{product.brand}}</p>
+          <p class="list-price {{product.sale==true && 'strikethru' || ''}}">List: {{product.listPrice}}</p>
+          <p class="sale-price" data-ng-show="product.sale">Sale: {{product.salePrice}}</p>
+
+          <form class="form-inline product-form">
+            <input type="number" class="input-small prod-num-input" min="0" max="10" value="0">
+            <button type="submit" class="btn btn-small">Add to Cart »</button>
+          </form>
+
+        </div>
+      
+      </div>
+
+
+  </div>
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
   -->

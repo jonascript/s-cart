@@ -1,0 +1,87 @@
+/* line 2, ../sass/modules.scss */
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+/* line 9, ../sass/modules.scss */
+.menu:before {
+  content: "[";
+}
+
+/* line 13, ../sass/modules.scss */
+.menu:after {
+  content: "]";
+}
+
+/* line 17, ../sass/modules.scss */
+.menu > li {
+  display: inline;
+}
+
+/* line 21, ../sass/modules.scss */
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+/* line 26, ../sass/modules.scss */
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+/* line 31, ../sass/modules.scss */
+.products {
+  max-width: 830px;
+}
+
+/* line 35, ../sass/modules.scss */
+.product {
+  display: inline-block;
+  position: relative;
+  width: 190px;
+  height: 450px;
+  margin: 0 10px 10px 0;
+  padding: 5px;
+  vertical-align: top;
+  border: 1px solid #999999;
+  border-collapse: collapse;
+}
+/* line 47, ../sass/modules.scss */
+.product .name {
+  font-size: 15px;
+  line-height: 17px;
+  margin-top: 10px;
+}
+/* line 53, ../sass/modules.scss */
+.product .thumbnail {
+  position: relative;
+}
+/* line 57, ../sass/modules.scss */
+.product .editor-icon {
+  bottom: 5px;
+  right: 5px;
+  position: absolute;
+}
+/* line 63, ../sass/modules.scss */
+.product .sale-icon {
+  top: 0;
+  right: 0;
+  position: absolute;
+}
+/* line 69, ../sass/modules.scss */
+.product .prod-num-input {
+  width: 30px;
+}
+/* line 73, ../sass/modules.scss */
+.product .sale-price {
+  color: #c0132f;
+}
+/* line 77, ../sass/modules.scss */
+.product .product-form {
+  position: absolute;
+  bottom: 0;
+}

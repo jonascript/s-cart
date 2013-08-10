@@ -1,0 +1,48 @@
+/* line 1, ../../sass/compressed/modules.scss */
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+/* line 1, ../../sass/compressed/modules.scss */
+.menu:before {
+  content: "[";
+}
+
+/* line 1, ../../sass/compressed/modules.scss */
+.menu:after {
+  content: "]";
+}
+
+/* line 1, ../../sass/compressed/modules.scss */
+.menu > li {
+  display: inline;
+}
+
+/* line 1, ../../sass/compressed/modules.scss */
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+/* line 1, ../../sass/compressed/modules.scss */
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+/* line 1, ../../sass/compressed/modules.scss */
+.products {
+  max-width: 830px;
+}
+
+/* line 1, ../../sass/compressed/modules.scss */
+.product {
+  width: 200px;
+  margin: 0 10px 10px 0;
+  display: inline-block;
+  border: 1px solid #999999;
+  border-collapse: collapse;
+}
