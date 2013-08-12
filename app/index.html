@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <div class="container">
+  <div class="container" data-ng-controller="CartCtrl">
 
     <div class="row">
         <div class="span6">
@@ -19,30 +19,34 @@
         <div class="span6">
           <h2>Cart</h2>
           <table class="table">
-        <thead>
-          <tr>
-            <th>
-              <h3>Group 1</h3>
-            </th>
-          </tr>
-        </thead>
+ 
         <tbody>
-          <tr>
-            <td>Product 1</td>
-            <td>Qty</td>
+          <tr data-ng-repeat="(key, item) in cart.items">
+            <td>{{item.name}}</td>
             <td>
-              <input type="number" style="width: 45px; padding: 1px" min="0" max="10" value="0"> <i class="icon-trash"></i>
+              Qty 
+              <input type="number" style="width: 45px; padding: 1px" min="1" max="10" ng-model="item.qty" ng-change="updateQty(key, item.qty)"> <i class="icon-trash" data-ng-click="delete(key);" ></i>
             </td>
           </tr>
-          <tr>
-            <td>Product 2</td>
-            <td>Qty</td>
-            <td>
-              <input type="number" style="width: 45px; padding: 1px" value="0">  <i class="icon-trash"></i>
-            </td>
-          </tr>
+      
         </tbody>
       </table>
+
+          <form name="shippingForm" class="form-inline product-form" ng-show="cart.items.length">
+            <p class="" data-ng-show="!shipping">Select a shipping method</p>
+            <div ng-repeat="(key, method) in cart.shippingmethods" class="row-fluid">
+              <label><input type="radio" name="meaningless" ng-value="key" ng-model="$parent.shipping" />
+              &nbsp;<span ng-bind="method.name"></span>: {{(cart.totals.price < 500 || method.name!='Ground') && (method.price | currency) || '$0'}}</label>
+            </div>
+          </form>
+
+          <p>Number of items: {{cart.totals.qty}}</p>
+          <p>Total price: {{cart.totals.price | currency}}</p>
+          <p>Shipping: {{cart.totals.shipping | currency}}</p>
+          <p>Subtotal: {{cart.totals.subtotal | currency}}</p>
+          <p>Tax: {{cart.totals.tax | currency}}</p>
+          <p>Total: {{cart.totals.total | currency}}</p>
+ 
           <p><a class="btn" href="#">Checkout »</a></p>
         </div>
         
@@ -73,11 +77,13 @@
           </div>
           <h3 class="name">{{product.name}}</h3>
           <p class="brand">{{product.brand}}</p>
-          <p class="list-price {{product.sale==true && 'strikethru' || ''}}">List: {{product.listPrice}}</p>
-          <p class="sale-price" data-ng-show="product.sale">Sale: {{product.salePrice}}</p>
+          <p class="list-price {{product.sale==true && 'strikethru' || ''}}">List: {{product.listPrice | currency}}</p>
+          <p class="sale-price" data-ng-show="product.sale">Sale: {{product.salePrice | currency}}</p>
 
-          <form class="form-inline product-form">
-            <input type="number" class="input-small prod-num-input" min="0" max="10" value="0">
+          <form name="productForm" class="form-inline product-form" ng-submit="addToCart(key, qty)">
+          
+            <input name="qty" ng-model="qty" type="number" class="input-small prod-num-input" min="1" max="10" ng-value="1">
+
             <button type="submit" class="btn btn-small">Add to Cart »</button>
           </form>
 

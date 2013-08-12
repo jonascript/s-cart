@@ -14,6 +14,7 @@ module.exports = function(config) {
         'app/lib/angular/angular-*.js',
         'test/lib/angular/angular-mocks.js',
         'app/js/products-test.json',
+        'app/js/cart-test.json',
         'app/js/**/*.js',
         'test/unit/**/*.js'
       ],
