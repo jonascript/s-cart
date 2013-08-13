@@ -1,6 +1,6 @@
 # S-Cart. Demo shopping cart web app written in AngularJS.
 
-On a mac to setup: (Other OS will have different setup)
+On a mac to setup: (Other OS's will have different setup)
 
 1. Clone this repository to your machine.
 
