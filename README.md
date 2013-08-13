@@ -7,7 +7,6 @@ On a mac to load: (Other OS will have different setup)
 2. Add the following to your apache vhosts file (Please note the document root pointing to the "app" subfolder.)
 note: "/mnt/httpd2/htdocs/" would be replaced with your web server htdocs path. 
 
-example:
 
 ```
 <VirtualHost *:80>
@@ -19,10 +18,11 @@ example:
         AllowOverride All
         Options +Indexes
         </Directory>
-</VirtualHost>
+</VirtualHost>  
 ```
 
 3. Add the following line to your hosts.etc file. 
+
 ```
 scart.local   127.0.0.1
 ```
