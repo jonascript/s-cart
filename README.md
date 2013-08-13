@@ -1,13 +1,11 @@
-# S-Cart — Demo shopping cart web app written in AngularJS.
+# S-Cart. Demo shopping cart web app written in AngularJS.
 
-On a mac to load: (Other OS will have different setup)
+On a mac to setup: (Other OS will have different setup)
 
 1. Clone this repository to your machine.
 
 2. Add the following to your apache vhosts file (Please note the document root pointing to the "app" subfolder.)
 note: "/mnt/httpd2/htdocs/" would be replaced with your web server htdocs path. 
-
-
 ```
 <VirtualHost *:80>
         ServerAdmin webmaster@scart.local
@@ -20,13 +18,10 @@ note: "/mnt/httpd2/htdocs/" would be replaced with your web server htdocs path.
         </Directory>
 </VirtualHost>  
 ```
-
 3. Add the following line to your hosts.etc file. 
-
 ```
 scart.local   127.0.0.1
 ```
-
 4. Restart Apache.
 
 
