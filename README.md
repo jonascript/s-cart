@@ -1,7 +1,9 @@
 # S-Cart — Demo shopping cart web app written in AngularJS.
 
 On a mac to load: (Other OS will have different setup)
+
 1. Clone this repository to your machine.
+
 2. Add the following to your apache vhosts file (Please note the document root pointing to the "app" subfolder.)
 note: "/mnt/httpd2/htdocs/" would be replaced with your web server htdocs path. 
 
