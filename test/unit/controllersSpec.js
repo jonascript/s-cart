@@ -7,10 +7,7 @@ describe('Products controller', function() {
 
     cartDataObj = dummyCartJson().cart;
     beforeEach(function(){ 
-      
-      //We laod all the module dependancies up front.å
-      //Create mocks before we define our provider values. Using jasnine spy objects allows us to
-      //define mocks succinctly. Mocks the featured service
+
       mockProducts = jasmine.createSpyObj('mockProducts',['get']);
  
       mockProducts.get.andCallFake(function(){    
@@ -200,7 +197,7 @@ describe('Shopping cart controller', function() {
       
       $rootScope.$digest();
 
-      scope.updateQty(0,4);
+      scope.updateQty(0, { 'name': '4', 'value': 4 });
 
       expect(typeof scope.cart).toBe('object');
       expect(scope.cart.items[0].qty).toBe(4);

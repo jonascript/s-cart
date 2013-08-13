@@ -331,7 +331,6 @@ describe('updateShipping', function() {
 
   it('should set Ground Shipping price to $0 if total price is over $500', inject(function() {
 
- 
     cart.add(item, 2).then(function(cartObj) { 
 
       cart.updateShipping('Ground Shipping').then(function(cartObj) { 

@@ -1,87 +1,112 @@
-/* line 2, ../sass/modules.scss */
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
-}
-
-/* line 9, ../sass/modules.scss */
-.menu:before {
-  content: "[";
-}
-
-/* line 13, ../sass/modules.scss */
-.menu:after {
-  content: "]";
-}
-
-/* line 17, ../sass/modules.scss */
-.menu > li {
-  display: inline;
-}
-
-/* line 21, ../sass/modules.scss */
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
-}
-
-/* line 26, ../sass/modules.scss */
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
-}
-
-/* line 31, ../sass/modules.scss */
-.products {
+/* line 3, ../sass/modules.scss */
+.header {
   max-width: 830px;
 }
 
-/* line 35, ../sass/modules.scss */
+/* line 8, ../sass/modules.scss */
+.product-section {
+  max-width: 850px;
+  margin-top: 50px;
+}
+/* line 13, ../sass/modules.scss */
+.product-section .search-query {
+  margin-left: 5px;
+}
+/* line 17, ../sass/modules.scss */
+.product-section .products {
+  text-align: center;
+}
+@media (min-width: 767px) {
+  /* line 22, ../sass/modules.scss */
+  .product-section .products {
+    text-align: left;
+  }
+}
+
+/* line 31, ../sass/modules.scss */
 .product {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   display: inline-block;
   position: relative;
-  width: 190px;
+  width: 200px;
   height: 450px;
-  margin: 0 10px 10px 0;
+  margin: 0 5px 10px 5px;
   padding: 5px;
   vertical-align: top;
   border: 1px solid #999999;
   border-collapse: collapse;
+  text-align: left;
 }
-/* line 47, ../sass/modules.scss */
+/* line 45, ../sass/modules.scss */
 .product .name {
   font-size: 15px;
   line-height: 17px;
   margin-top: 10px;
 }
-/* line 53, ../sass/modules.scss */
+/* line 51, ../sass/modules.scss */
 .product .thumbnail {
   position: relative;
 }
-/* line 57, ../sass/modules.scss */
+/* line 55, ../sass/modules.scss */
 .product .editor-icon {
   bottom: 5px;
   right: 5px;
   position: absolute;
 }
-/* line 63, ../sass/modules.scss */
+/* line 61, ../sass/modules.scss */
 .product .sale-icon {
   top: 0;
   right: 0;
   position: absolute;
 }
-/* line 69, ../sass/modules.scss */
+/* line 67, ../sass/modules.scss */
 .product .prod-num-input {
   width: 30px;
 }
-/* line 73, ../sass/modules.scss */
+/* line 71, ../sass/modules.scss */
 .product .sale-price {
   color: #c0132f;
 }
-/* line 77, ../sass/modules.scss */
+/* line 75, ../sass/modules.scss */
 .product .product-form {
   position: absolute;
   bottom: 0;
+}
+
+/* line 83, ../sass/modules.scss */
+.cart {
+  padding: 10px;
+  border: 1px solid #999999;
+  border-radius: 5px;
+  font-size: 11px;
+  line-height: 12px;
+}
+/* line 91, ../sass/modules.scss */
+.cart .items {
+  margin: 0 0 10px 0;
+}
+/* line 94, ../sass/modules.scss */
+.cart .items h2 {
+  border-bottom: 1px dotted #999999;
+  margin-bottom: 5px;
+}
+/* line 99, ../sass/modules.scss */
+.cart .items .item {
+  line-height: 20px;
+  margin: 0 0 5px 0;
+  border-bottom: 1px dotted #999999;
+}
+/* line 106, ../sass/modules.scss */
+.cart .items .item-name {
+  line-height: 11px;
+}
+/* line 115, ../sass/modules.scss */
+.cart .shipping-msg, .cart .free-shipping {
+  color: red;
+}
+/* line 119, ../sass/modules.scss */
+.cart .icon-trash {
+  vertical-align: middle;
 }

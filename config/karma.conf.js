@@ -7,7 +7,9 @@ module.exports = function(config) {
       plugins: [
         // these plugins will be require() by Karma
         'karma-jasmine',
-        'karma-chrome-launcher'
+        'karma-chrome-launcher',
+        'karma-firefox-launcher',
+        'karma-safari-launcher'
       ],
       files : [
         'app/lib/angular/angular.js',
@@ -23,7 +25,7 @@ module.exports = function(config) {
 
       autoWatch : true,
 
-      browsers : ['Chrome'],
+      browsers : ['Chrome', 'Firefox', 'Safari'],
 
       junitReporter : {
         outputFile: 'test_out/unit.xml',
