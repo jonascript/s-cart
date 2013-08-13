@@ -4,8 +4,6 @@
   <meta charset="utf-8">
   <title>S-Mart</title>
   <link rel="stylesheet" href="css/stylesheets/screen.css"/>
-  <link rel="stylesheet" href="css/stylesheets/app.css"/>
-
 </head>
 <body>
 
@@ -25,7 +23,6 @@
                   <div class="span7 item-name">{{item.name}}</div>
                   <div class="span2 item-price">${{item.sale == true && item.salePrice|| item.listPrice}}</div>
                   <div class="item-edit span2">
-                   <!-- <input type="number" style="width: 100%; padding: 1px" min="1" max="10" ng-model="item.qty" ng-change="updateQty(key, item.qty)"> -->
                     <select ng-model="item.selectedQty" ng-change="updateQty(key, item.selectedQty)" ng-options="c.name for c in selectValues" style="width: 100%;"></select>
                   </div>
                   <div class="span1 item-edit">
@@ -42,10 +39,6 @@
                 <div ng-repeat="(key, method) in cart.shippingmethods" class="row-fluid">
                   <label><input type="radio" name="meaningless" ng-value="key" ng-model="$parent.shipping" />
                   &nbsp;<span ng-bind="method.name"></span>: <span data-ng-bind="method.price" class="{{!(cart.totals.price < 500 || method.name!='Ground') && 'strikethru' || ''}}"></span> <span class="free-shipping" data-ng-show="!(cart.totals.price < 500 || method.name!='Ground')">$0</span></label>
-                  <!--
-                  {{(cart.totals.price < 500 || method.name!='Ground') && (method.price | currency) || '$0'}}
-
-                -->
                 </div>
               </form>
             </div>
